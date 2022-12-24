@@ -25,6 +25,7 @@ class Break {
 public static void main(String[]args) {
         Dog d=new Dog();
         Lion l=new Lion();
+        d.all_animal();
         d.sound();
         l.sound();
 }
