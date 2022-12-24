@@ -1,4 +1,7 @@
 /*Abstract in java:- Abstract in java is just showing necessary information to user and hiding its implementation from the user such process is called Abstract*/
+/*note :- 1. abstract class does not have obj.
+          2. Never use abstract public while declaring abstract method inside the abstract class.  
+            */
 
 //program
 
