@@ -60,6 +60,7 @@
      }
 
      //implemented class
+     //Old style upto java 7 version (1.0)
      class C implements I1{
         @Override
        public void m1(){
@@ -77,8 +78,22 @@
                         
        }
      }
-
+      //we are writing the implement class C just for the one statement or means m1() method logic
      //this is the problem that we requires one more implementation class to implement method to solve this problem anonymous inner class introduced.
+     //passing logic to the m1() method is expected to get the output , but we have to create the classes and override it just for logic.
+
+    //In java 1.1 version sun micro system come with new syntax :
+    //anonymous inner class is un-named class , it is a sub-type of a class or interface it is also an object of this implementation
+    1. it is an un-named class.
+    2. it is a sub type of class or interface.
+    3. it also an object of this implementation
+    4. and passing this object as argument to a mehtod.
+      e1.m2(new I1(){
+      public void m1(){
+        System.out.println("Annonymous class");
+        
+      }
+    });
 
      
      
