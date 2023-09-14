@@ -96,7 +96,9 @@
     });
 
      
-     
+     Q. When to choose anonymous class and when to choose outer class(Implementation class) ?
+     Anonymous inner class :- When we want to use implementation only once then choose anonymous inner class.
+     outer class : - when we want to use implementation multiple times then choose outer class.
 
    
 */
