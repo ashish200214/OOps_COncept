@@ -100,5 +100,16 @@
      Anonymous inner class :- When we want to use implementation only one place then choose anonymous inner class.
      outer class : - when we want to use implementation multiple places or reuse it in multiple times  then choose outer class.
 
+   But problem with anonymoous inner class is its syntax is not simple it is complex to the developer to understand
+
+   by seeing e1.m2();  compiler can get I1 interface because in m2(I1) method I1 interface is present so
+
+    //this is lambda expression
+   e1.m2(() ->{   //to differentiate parenthesis with body we have to use symbol ->  
+     System.out.println("m1 is from AIC");
+   }
+
+   e1.m2(()-> System.out.println("m1 is from AIC");
    
+   );
 */
