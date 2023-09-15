@@ -1,0 +1,63 @@
+OOP -> we must store value and logic by using a class and we must pass as class object.
+          1.first we must create a class
+          2. Then create field and logic
+          3. Then we must create an object
+          4. Pass it as argument 
+          5. Inside that called method, by using its parameter
+            we can access methods to execute logic and read fields value
+
+FP  ->  pass logic as argument directly
+        1. no need to define separate class
+        2. no need to create object
+        3. directly we must pass logic as argument 
+
+        If we pass logic directly as a method argument 
+       Q1. how can we store it or receive it as argument, what is the method parameter type ?
+       Q2. how can we invoke that logic to execute, what is the method name?
+
+What are the building blocks of OOP ?
+        1. Class
+        2. Object
+What are the Building block of FP ?
+1. Functional interface
+2. Lambda Expression
+
+
+Functional Interface :- 
+    1. An interface that has only one abstract method is called FI
+    2. A single abstract method interface (SAM) is called FI.
+    3. A FI is used for developing a LE for passing logic directly
+       as argument a method without creating sepearate class and object.
+    4. A functional interface is created by using the keywored interface
+      but must have only one abstract method and 'n' default and static implemented methods.
+
+For Example:-
+
+interface I1{
+  void m1();
+}
+
+interface I2{
+  void m1();
+
+ default void m2(){}
+static void m3(){}
+private static void m4(){}
+}
+
+interface I3{
+  void m1();
+  void m2();          //not a functional interface.
+}
+
+Annotation used to declare a interface  or restricting the interface as functional is @functional
+
+Q. How can we stop adding more abstract method in a FI?
+  we must mark this interface as FI by using a marker interface @FunctionalInterface
+
+for Example :- 
+@FunctionalInterface
+interface i1{
+  void m1();
+
+}
