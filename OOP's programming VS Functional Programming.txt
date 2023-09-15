@@ -1,4 +1,4 @@
-OOP -> we must store value and logic by using a class and we must pass as class object.
+.OOP -> we must store value and logic by using a class and we must pass as class object.
           1.first we must create a class
           2. Then create field and logic
           3. Then we must create an object
@@ -61,3 +61,10 @@ interface i1{
   void m1();
 
 }
+
+
+Q. How many ways we can create a FI ?
+          1. effectively as FI by creating only one abstract method.
+          2. expelicity by marking it as FI by using @FI annotation.
+
+
