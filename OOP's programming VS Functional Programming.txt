@@ -170,7 +170,7 @@ in label concept we used to take single letter or word but in generic we have to
 
 //Full code for practice
 
-interface A<T>{   //Integer A is generic interface 
+interface A<T>{   //Integer A is generic Functional interface 
     void m1(T t);
 }
 
@@ -184,3 +184,5 @@ class I1{
           A<String> i2 = (t) -> {t.toUpperCase();}
     }
 }
+
+By using generic Functional interface we are specifiying the type of the ...
