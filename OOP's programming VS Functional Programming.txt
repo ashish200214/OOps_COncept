@@ -67,4 +67,103 @@ Q. How many ways we can create a FI ?
           1. effectively as FI by creating only one abstract method.
           2. expelicity by marking it as FI by using @FI annotation.
 
+7. mainly a functional interface is meant for passing a mathematical calculation or validation logic
+   directly as argument to a method. This is the reason this interface is named as functinal interface.
 
+If I want to develop interface that accept any types of value and return type then , we must use Object class reference variable as it as super class on all.
+          interface I9{
+                    void m1(Object obj);
+          }
+
+          interface I10{
+                    Object m2();
+
+          }
+Still there is a problem , the value which we are passing to Object obj is obj type
+we have to convert (DownCast) into desired datatype like int,char,double ,etc..
+
+Suppose i want to convert the string into lowerCase then first we have to convert
+the Object obj into the String then we can perform the operation.
+
+If I stored value 10 to obj = 10 if i want to add 10 to obj it is not possible so first
+we have to convert it into desired data type then only operation can be performed.
+
+I want to verfiy the value is positive or negative we cannot directly write
+          if(obj<0) //we cannot do this  Compiler will slap😂😂
+first obj must be downcast to int 
+          Integer i = (Integer)obj;
+after then we can verify
+           if(i<0) //correct one
+for example:-
+
+Class C implements I9{  //I9 74 line
+          public void m1(Object obj){
+                    if(obj instanceof Integer i){
+                              int res = i+10;
+                              System.out.println(res);
+                              //or 
+                              if(res<0){
+                                        Systme.out.printn("Negative number");
+                              }
+                    }
+          }
+}
+
+
+//full code
+
+interface  A {
+    void m1(Object obj);
+}
+
+class B implements A{
+    public void m1(Object obj){
+        if(obj instanceof Integer i){
+            int res = i+10;
+            System.out.println(res);
+        }
+        else{
+            System.out.println("Don't pass negative number");
+        }
+    }
+}
+
+class I1{
+    public static void main(String[] args) {
+        B obj = new B();
+        obj.m1(20);
+
+    }
+}
+
+Generic :- 
+//why we are checking , why we are downcasting just don't accept it.
+There are some website where you need to enter your mobile no. if we try to type text the coloumn will
+not accept the text
+
+Pin no. accept only 6 digit no. if we try to add more than or lesser than 6 it will not accept , submit button will not shown
+At the time of entering the value if you stop entering wrong value then we no need to verify at runtime
+That means further we no need to verify because at time of compilation validation and verification is done so no need to verify it.
+
+Because of this people invented concept of Generic  
+interface  A {
+    void m1(Object obj);
+}
+this is generic interface (means it accept all types of object) but further we have to perform casting , validation
+that means if 10 times value passed 10 times this casting and validation is performed which is not easy (difficult).
+to avoid this problem we will use generic.
+
+we telling the compiler allow this type of value to enter if enter other type value through error. 
+that means we are making aware the compiler to accept particular type of data only. If above m1() method we are not making compiler aware of the 
+object, obj means anytype of value allowed so compiler don't know the actual type of value coming JVM knows if expected type coming JVM allows but 
+if unexpected type coming JVM not allows and at runtime developer not facing any problem but the end-user facing the problem which is not good.
+
+To avoid this (type) problem or class casting exception we have generic .
+
+How to add generic concept 
+
+interface I11<T>{     //T means type (What type of the value i want i am specifiying here)
+          void m1(T t){};              I11<Integer> i1 = (t) -> {int res = t+10} //now T will be integer type so we no need to type cast we already informed to compiler 
+}                                       //as t is parameter to m1(t)                                                             
+
+in label concept we used to take single letter or word but in generic we have to use only single character.
