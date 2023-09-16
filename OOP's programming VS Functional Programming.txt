@@ -167,3 +167,16 @@ interface I11<T>{     //T means type (What type of the value i want i am specifi
 }                                       //as t is parameter to m1(t)                                                             
 
 in label concept we used to take single letter or word but in generic we have to use only single character.
+
+//Full code for practice
+
+interface A<T>{   //Integer A is generic interface 
+    void m1(T t);
+}
+
+class I1{
+    public static void main(String[] args) {
+        A<Integer> i = (t) -> {System.out.println(t+10);}; //at time of compilation we telling compiller that this accept only integer type value.
+        i.m1(10);
+    }
+}
