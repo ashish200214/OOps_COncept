@@ -180,7 +180,7 @@ class I1{
         i.m1(10);
 
           //suppose i want to take string as argument
-          String s="ashish"
-          A<String> i2 = (t) -> {s.toUpperCase();}
+          
+          A<String> i2 = (t) -> {t.toUpperCase();}
     }
 }
