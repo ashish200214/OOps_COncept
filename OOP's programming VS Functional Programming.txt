@@ -178,5 +178,9 @@ class I1{
     public static void main(String[] args) {
         A<Integer> i = (t) -> {System.out.println(t+10);}; //at time of compilation we telling compiller that this accept only integer type value.
         i.m1(10);
+
+          //suppose i want to take string as argument
+          String s="ashish"
+          A<String> i2 = (t) -> {s.toUpperCase();}
     }
 }
